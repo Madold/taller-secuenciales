@@ -72,16 +72,12 @@ public class Ganancia {
         return 500_000 * numHectareas;
     }
 
-    public double calcCostoTotal() {
+    public float calcCostoTotal() {
         return  (calcCostoTotalBultosDeHectarea() + calcCostoTotalArriendo() + calcCostoInsumosAbonos()
                 + calcCostoTotalFungicida() + calcCostoSiembra() + calcCostoRecoleccion());
     }
 
-    public double calcIngresos() {
-        return calcCostoTotal() * precioToneladaMaiz;
-    }
-
-    public double calcGanancias() {
-        return calcIngresos() - calcCostoTotal();
+    public float calcGanancias() {
+        return (numHectareas * precioToneladaMaiz) - calcCostoTotal();
     }
 }
